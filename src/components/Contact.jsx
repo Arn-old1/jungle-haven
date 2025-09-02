@@ -1,26 +1,9 @@
 import React, { useRef } from "react";
-import emailjs from "@emailjs/browser";
 import "./Contact.css";
 
 const Contact = () => {
   const form = useRef();
 
-  const sendEmail = (e) => {
-    e.preventDefault();
-
-    emailjs
-      .sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", form.current, "YOUR_PUBLIC_KEY")
-      .then(
-        (result) => {
-          console.log(result.text);
-          alert("Message sent successfully!");
-        },
-        (error) => {
-          console.log(error.text);
-          alert("Failed to send message.");
-        }
-      );
-  };
 
   return (
     <section className="contact">
